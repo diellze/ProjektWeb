@@ -14,6 +14,13 @@
   box-sizing: inherit;
 }
 
+h2{
+  font-family: SourceSemiBold;
+  font-size: 5.4rem;
+  line-height: 1.25;
+  font-weight: bold;
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -98,10 +105,11 @@ nav .wrapper {
 
 .nav-list a {
   color: var(--black);
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   padding: 0.9rem 1.5rem;
   border-radius: 0.5rem;
   transition: all 300ms ease;
+  font-family: SourceRegular;
 }
 
 .nav-list li a:hover {

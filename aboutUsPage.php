@@ -20,9 +20,16 @@
         <!-- Navigation -->
         <?php include 'includeParts/header.php' ?>
 
+        <div class="hero" style= "background-image:url(shoe.jpg);">
+            <div class = "left">
+                <h1 style ="align-items: center; text-shadow: 0 3px 6px rgb(0 0 0/ 50%);font-size: 4.2rem; "> Rreth Nesh</h1>
+            </div>
+        </div>
+
+
         <section class="section promotion">
             <div class="title">
-              <h2>Rreth Nesh</h2>
+              <h2>Rreth <span class = "whoweare" style = "color:#93c1f5;">Nesh </span> </h2>
               <p class="aboutUs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eos odio labore officiis dignissimos ducimus repellendus vero magni, ipsam, libero asperiores minima. Incidunt asperiores alias placeat vero maxime. Voluptatem, vero. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem accusantium necessitatibus obcaecati saepe earum sunt ut, ab vitae voluptas eaque expedita voluptatibus, optio, eligendi vero cupiditate quaerat ipsa sint sit?
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem ipsam debitis numquam totam maiores tempore nostrum, nihil veniam sit rerum cum vitae et eum quae, in doloremque possimus ab eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum assumenda molestias ab nam nobis non quis doloribus cumque, rerum minima asperiores quae deserunt harum dolor reprehenderit odio, iste amet id? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id debitis culpa, assumenda itaque, vel nemo cupiditate fugit repellat, quidem nesciunt laudantium sequi ab error quos soluta vero asperiores illo beatae!
               </p> 
