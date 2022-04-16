@@ -49,6 +49,13 @@ li {
   margin: 0 auto;
 }
 
+.section .aboutUs {
+  margin-left: 15rem;
+  margin-right: 15rem;
+  text-align: center;
+  margin-bottom: 10rem;
+}
+
 @media only screen and (max-width: 1200px) {
   .container {
     padding: 0 3rem;
@@ -91,11 +98,10 @@ nav .wrapper {
 
 .nav-list a {
   color: var(--black);
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   padding: 0.9rem 1.5rem;
   border-radius: 0.5rem;
   transition: all 300ms ease;
-  font-family: SourceRegular;
 }
 
 .nav-list li a:hover {
@@ -159,6 +165,13 @@ nav .wrapper {
     right: 2.5rem;
     color: var(--white);
   }
+
+  .section .aboutUs {
+    margin-left: 8rem;
+    margin-right: 8rem;
+    text-align: center;
+    margin-bottom: 8rem;
+  }
 }
 
 /* Hero */
@@ -201,7 +214,6 @@ nav .wrapper {
   font-size: 4.5rem;
   margin-bottom: 1rem;
   line-height: 1.2;
-  
 }
 .hero .left small {
   display: block;
@@ -297,6 +309,7 @@ nav .wrapper {
 .section .title span {
   color: var(--grey2);
 }
+
 
 .promotion-layout {
   display: grid;
@@ -936,4 +949,6 @@ nav .wrapper {
   .product-detail .details {
     gap: 3rem;
   }
+
+  /*CONTACT FORM*/
 }

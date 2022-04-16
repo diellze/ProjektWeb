@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,14 +14,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.css">
 
   <!-- Custom StyleSheet -->
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
   <title>Ecommerce Website</title>
 </head>
 
 <body>
 
   <!-- Navigation -->
-  <?php include 'header.php'?>
+  <?php include 'includeParts/header.php' ?>
 
   <div class="hero">
     <div class="left">
@@ -225,8 +226,8 @@
   </section>
 
   <!-- Footer -->
-  <?php include 'footer.php'?>
-  <script src="./index.js"></script>
-  <!-- djell-->
+  <?php include 'includeParts/footer.php' ?>
+  
+  <script src="./js/index.js"></script>
 </body>
 </html>
