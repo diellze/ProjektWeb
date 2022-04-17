@@ -20,7 +20,7 @@
         <!-- Navigation -->
         <?php include 'includeParts/header.php' ?>
 
-        <div class="hero" style= "background-image:url(shoe.jpg);">
+        <div class="hero" style= "background-image:url(img/shoe.jpg);">
             <div class = "left">
                 <h1 style ="align-items: center; text-shadow: 0 3px 6px rgb(0 0 0/ 50%);font-size: 4.2rem; "> Rreth Nesh</h1>
             </div>
