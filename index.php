@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.css">
 
   <!-- Custom StyleSheet -->
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles.css?v=<?php echo time(); ?>">
   <title>Ecommerce Website</title>
 </head>
 
@@ -75,6 +74,7 @@
   </section>
 
   <!-- Products -->
+  <?php require_once './controllers/ProductController.php' ?>
   <section class="section products">
     <div class="title">
       <h2>Produktet e Reja</h2>
@@ -200,6 +200,28 @@
           </div>
         </div>
       </div>
+      <div class = "product">
+        <?php
+          $products = new ProductController;
+          $all = $products->readData();
+          for($i = 0; $i<count($all);$i++){
+            echo 
+                    '<div class = "img-container">
+                    <img scr="' .$all[$i]['product_image'] .'" alt=""/>
+                    <div class="addCart">
+                      <i class="fas fa-shopping-cart"></i>
+                    </div>
+                  </div>
+                  <div class="bottom">
+                    <a href="">'.$all[$i]['product_name'] .'</a>
+                    <div class="price">
+                      <span> '.$all[$i]['product_price'] .' </span>  
+                  </div>';
+          
+          }
+    ?>
+    </div>
+
     </div>
   </section>
 
@@ -224,6 +246,7 @@
       </div>
     </div>
   </section>
+  ?>
 
   <!-- Footer -->
   <?php include 'includeParts/footer.php' ?>

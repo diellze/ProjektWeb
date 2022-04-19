@@ -1,5 +1,5 @@
 <?php
-require_once '../controllers/ProductController.php';
+require_once '../controllers/user.php';
 ?>
 
 <style>
@@ -52,24 +52,22 @@ require_once '../controllers/ProductController.php';
     <table class="content-table">
         <thead>
             <tr>
-              <th>Product image</th>
-              <th>Product name</th>
-              <th>Product price</th>
-              <th>Product description</th>
+              <th>emri</th>
+              <th>mbiemri</th>
+              <th>email</th>
+              <th>pasword</th>
             </tr>
         </thead>
         <tbody>
           <?php
-          $p = new ProductController;
-          $allProduct = $p->readData();
-          foreach($allProduct as $product): ?>
+          $p = new user;
+          $allusers = $p->readData();
+          foreach($allusers as $user): ?>
           <tr>
-            <td><?php echo $product['product_image']; ?></td>
-            <td><?php echo $product['product_name']; ?></td>
-            <td><?php echo $product['product_price']; ?></td>
-            <td><?php echo $product['product_description']; ?></td>
-            <td><a href="edit-product.php?id=<?php echo $product['Id'];?>">Edit</a></td>
-            <td><a href="delete-product.php?id=<?php echo $product['Id'];?>">Delete</a></td>
+            <td><?php echo $user['Emri']; ?></td>
+            <td><?php echo $user['Mbiemri']; ?></td>
+            <td><?php echo $user['Email']; ?></td>
+            <td><?php echo $user['Pasword']; ?></td>
           </tr>
           <?php endforeach; ?>
         </tbody>

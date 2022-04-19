@@ -174,6 +174,17 @@
     </style>
 </head>
 <body>
+
+    <?php
+        require_once '../controllers/User.php';
+
+        $user = new User();
+        if(isset($_POST['submit'])){
+            $user->insert($_POST);
+        }
+        
+    ?>
+
     <ul>
         <li><a href="index.php">Faqja Kryesore</a></li>
         <li><a href="aboutUsPage.php">Rreth Nesh</a></li>
@@ -182,7 +193,7 @@
     <div class="background"></div>
     <div class="container">
         <h2>Regjistrim</h2>
-        <form name="form" action="">
+        <form name="form" action="POST">
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle

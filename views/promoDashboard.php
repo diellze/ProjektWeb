@@ -18,7 +18,7 @@ require_once '../controllers/PromoController.php';
 }
 
 .content-table thead tr {
-  background-color: #009879;
+  background-color: #93c1f5;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
