@@ -27,8 +27,7 @@
             $query->bindParam(':Konifrmoemailin', $request['emailk']);
             $query->bindParam(':Pasword', $request['password']);
             $query->bindParam(':KonfirmoPassword', $request['passwordk']);
-
-            $query->execute();
+             $query->execute();
     
             return header('Location: userDashboard.php');
         }

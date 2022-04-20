@@ -1,5 +1,5 @@
 <?php
-require_once '../users/user.php';
+require_once 'user.php';
 ?>
 
 <style>
@@ -72,6 +72,8 @@ require_once '../users/user.php';
             <td><?php echo $user['Konifrmoemailin']; ?></td>
             <td><?php echo $user['Pasword']; ?></td>
             <td><?php echo $user['KonfirmoPassword']; ?></td>
+            <td><a href="edit-user.php?id=<?php echo $user['Id'];?>">Ndrysho</a></td>
+            <td><a href="delete-user.php?id=<?php echo $user['Id'];?>">Fshije</a></td>
            
           </tr>
           <?php endforeach; ?>

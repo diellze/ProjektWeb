@@ -8,12 +8,9 @@ if(isset($_POST['submit'])){
 ?>
 
 <style>
-*{
-    font-family: verdana;
-}
 
 body{
-    background-color:#009879;
+    background-color:#93c1f5;
 }
 
 h2{
@@ -26,6 +23,30 @@ h2{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+::-webkit-file-upload-button {
+  background: #93c1f5;
+  color: white;
+  padding: 0.8em;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input[type=text], input[type=password], input[type=description] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=description], input[type=password]:focus {
+  
+  outline: none;
 }
 
 textarea{
@@ -49,7 +70,7 @@ label{
 button{
     text-align: center;
     font-size: 15px;
-    background-color: darkslategray;
+    background-color: #93c1f5;
     border-style: none;
     border-radius: 5px;
     color: white;
@@ -65,8 +86,9 @@ button{
 }
 
 button[type="submit"]:hover {
-    background: #181818;
+    background: #93c1f5;
 }
+
 
 @media only screen and (max-width: 996px) {
 	.container form {
@@ -88,7 +110,7 @@ button[type="submit"]:hover {
 		   <h2>CREATE A PRODUCT</h4><hr>
            <br>
 		   	<div class="form-group">
-		     <label for="image">Image: </label>
+		    <h3> <label for="image">Image: </label> </h3>
 		     <input type="file" 
 		           class="form-control" 
 		           id="image" 
@@ -96,7 +118,7 @@ button[type="submit"]:hover {
 		   </div><br>
 
 		   <div class="form-group">
-		     <label for="name">Name: </label>
+		   <h3> <label for="name">Name: </label></h3>
 		     <input type="text" 
 		           class="form-control" 
 		           id="name" 
@@ -104,7 +126,7 @@ button[type="submit"]:hover {
 		   </div><br>
 
            <div class="form-group">
-		     <label for="price">Price: </label>
+		   <h3> <label for="price">Price: </label> </h3>
 		     <input type="text" 
 		           class="form-control" 
 		           id="price" 
@@ -112,8 +134,13 @@ button[type="submit"]:hover {
 		   </div><br>
 
            <div class="form-group">
-		     <label for="description">Description: </label>
-		     <textarea name="description" cols="30" rows="10"></textarea>
+		   <h3> <label for="description">Description: </label> </h3>
+		     <textarea name="description" cols="30" rows="10" style  = "width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;"></textarea>
 		   </div><br>
 
 		   <button type="submit" 

@@ -1,14 +1,17 @@
 <?php
    
-
-
-    require_once 'user.php';
-
-        $user = new user();
-        if(isset($_POST['submit'])){
-            $user->insert($_POST);
-        }
-    
+   require_once 'user.php';
+   if(isset($_GET['id'])){
+       $userId = $_GET['id'];
+   }
+   
+   $user = new user;
+   $currentUser = $user->edit($userId);
+   
+   if(isset($_POST['submit'])){
+       $user->update($_POST, $userId);
+   }
+   
 
 ?>
 
@@ -72,29 +75,36 @@ a {
     <form action="" method="POST" name="form" >
 
     <label for="emri"><b>Emri</b></label>
-    <input type="text" placeholder="Shkruani emrin" name="emri" id="emri">
+    <input type="text" placeholder="Shkruani emrin" name="emri" id="emri" 
+    value = "<?php echo $currentUser['Emri']; ?>"
+    required>
 
     <label for="mbiemri"><b>Mbiemri</b></label>
-    <input type="text" placeholder="Shkruani mbiemrin" name="mbiemri" id="mbiemri" required>
+    <input type="text" placeholder="Shkruani mbiemrin" name="mbiemri" id="mbiemri"
+    value = "<?php echo $currentUser['Mbiemri'];?>"
+    required>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Shkruai Email-in" name="email" id="email" required>
+    <input type="text" placeholder="Shkruai Email-in" name="email" id="email" 
+    value = "<?php echo $currentUser['Email'];?>"
+    required>
 
     <label for="email"><b>Konfirmo Emailin</b></label>
-    <input type="text" placeholder="Konfirmoni emailin" name="emailk" id="emailk" required>
+    <input type="text" placeholder="Konfirmoni emailin" name="emailk" id="emailk"
+    value = "<?php echo $currentUser['Konifrmoemailin'];?>"
+    required>
 
     <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Shkruajeni Password-in" name="password" id="password" required>
+    <input type="password" placeholder="Shkruajeni Password-in" name="password" id="password"
+    value = "<?php echo $currentUser['Pasword'];?>"
+    required>
 
     <label for="psw-repeat"><b>Konfirmo Password</b></label>
-    <input type="password" placeholder="Shkruajeni Password-in edhe nje here" name="passwordk" id="psw-repeat" required>
+    <input type="password" placeholder="Shkruajeni Password-in edhe nje here" name="passwordk" id="psw-repeat"
+    value = "<?php echo $currentUser['KonfirmoPassword'];?>"
+    required>
     <hr>
 
     <button type="submit" name="submit" class="registerbtn">Register</button>
     </form>
   </div>
-
-  
-
-
-

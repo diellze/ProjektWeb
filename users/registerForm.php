@@ -1,12 +1,12 @@
 <?php
-        require_once 'user.php';
+     /*   require_once 'user.php';
 
         $user = new user();
         if(isset($_POST['submit'])){
             $user->insert($_POST);
-        }
+        }*/
         
-    ?>
+    ?> 
 
 
 <!DOCTYPE html>
