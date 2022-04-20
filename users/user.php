@@ -18,13 +18,13 @@
 
         public function insert($request){
             
-            $query = $this->db->pdo->prepare('INSERT INTO user (Emri, Mbiemri, Email, Konfirmoemailin,Pasword,KonfirmoPassword)
-            VALUES (:Emri, :Mbiemri, :Email, :Konfirmoemailin, :Pasword, :KonfirmoPassword)');
+            $query = $this->db->pdo->prepare('INSERT INTO user (Emri, Mbiemri, Email, Konifrmoemailin,Pasword,KonfirmoPassword)
+            VALUES (:Emri, :Mbiemri, :Email, :Konifrmoemailin, :Pasword, :KonfirmoPassword)');
     
             $query->bindParam(':Emri', $request['emri']);
             $query->bindParam(':Mbiemri', $request['mbiemri']);
             $query->bindParam(':Email', $request['email']);
-            $query->bindParam(':Konfirmoemailin', $request['emailk']);
+            $query->bindParam(':Konifrmoemailin', $request['emailk']);
             $query->bindParam(':Pasword', $request['password']);
             $query->bindParam(':KonfirmoPassword', $request['passwordk']);
 
@@ -43,12 +43,12 @@
 
         public function update($request, $id){
             $query = $this->db->pdo->prepare('UPDATE user SET Emri = :Emri,
-            Mbiemri = :Mbiemri, Email = :Email, Konfirmoemailin = :Konfirmoemailin,
+            Mbiemri = :Mbiemri, Email = :Email, Konifrmoemailin = :Konifrmoemailin,
              Pasword = :Pasword, KonfirmoPassword = :KonfirmoPassword WHERE id = :id');
             $query->bindParam(':Emri', $request['emri']);
             $query->bindParam(':Mbiemri', $request['mbiemri']);
             $query->bindParam(':Email', $request['email']);
-            $query->bindParam(':Konfirmoemailin', $request['emailk']);
+            $query->bindParam(':Konifrmoemailin', $request['emailk']);
             $query->bindParam(':Pasword', $request['password']);
             $query->bindParam(':KonfirmoPassword', $request['passwordk']);
             $query->bindParam(':id', $id);

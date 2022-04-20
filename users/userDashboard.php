@@ -1,5 +1,5 @@
 <?php
-require_once '../controllers/user.php';
+require_once '../users/user.php';
 ?>
 
 <style>
@@ -55,7 +55,9 @@ require_once '../controllers/user.php';
               <th>Emri</th>
               <th>Mbiemri</th>
               <th>Email</th>
+              <th>Emaili i konfirmuar</th>
               <th>Password</th>
+              <th>Password i konfirmuar</th>
             </tr>
         </thead>
         <tbody>
@@ -67,7 +69,10 @@ require_once '../controllers/user.php';
             <td><?php echo $user['Emri']; ?></td>
             <td><?php echo $user['Mbiemri']; ?></td>
             <td><?php echo $user['Email']; ?></td>
+            <td><?php echo $user['Konifrmoemailin']; ?></td>
             <td><?php echo $user['Pasword']; ?></td>
+            <td><?php echo $user['KonfirmoPassword']; ?></td>
+           
           </tr>
           <?php endforeach; ?>
         </tbody>
