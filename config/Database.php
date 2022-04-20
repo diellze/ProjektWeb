@@ -4,7 +4,7 @@ class Database{
 
     public function __construct(){
         try{
-          //  session_start();
+            session_start();
             $link = new PDO('mysql:host=localhost;dbname=womenshoes', 'root','');
             $this->pdo = $link;
         }catch(PDOException $exception){

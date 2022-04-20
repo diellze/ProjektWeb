@@ -174,17 +174,6 @@
     </style>
 </head>
 <body>
-
-    <?php
-        require_once '../controllers/User.php';
-
-        $user = new User();
-        if(isset($_POST['submit'])){
-            $user->insert($_POST);
-        }
-        
-    ?>
-
     <ul>
         <li><a href="index.php">Faqja Kryesore</a></li>
         <li><a href="aboutUsPage.php">Rreth Nesh</a></li>
@@ -193,44 +182,44 @@
     <div class="background"></div>
     <div class="container">
         <h2>Regjistrim</h2>
-        <form name="form" action="POST">
+        <form name="form" action="">
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="emri" name="emri" placeholder="Emri">
+                <input type="text" id="emri" placeholder="Emri">
             </div>
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="mbiemri" name="mbiemri"placeholder="Mbiemri">
+                <input type="text" id="mbiemri" placeholder="Mbiemri">
             </div>
 
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="email" name="email" placeholder="Email">
+                <input type="text" id="email" placeholder="Email">
             </div>
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="email_k" name="emailk" placeholder="Konfirmo Email-in">
+                <input type="text" id="email_k" placeholder="Konfirmo Email-in">
             </div>
 
             <div class="form-item">
                 <span class="material-icons-outlined">                   
                     lock
                     </span>
-                <input type="password" id="password" name="password" placeholder="Fjalëkalimi">
+                <input type="password" id="password" placeholder="Fjalëkalimi">
             </div>
             <div class="form-item">
                 <span class="material-icons-outlined">                   
                     lock
                     </span>
-                <input type="password" id="password_k" name="passwordk" placeholder="Konfirmo Fjalëkalimin">
+                <input type="password" id="password_k" placeholder="Konfirmo Fjalëkalimin">
             </div>
 
             <button type="submit" onclick="Validation2()"> REGJISTROHU</button>

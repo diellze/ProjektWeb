@@ -11,14 +11,12 @@ class ProductController{
     //CRUD
 
     public function readData(){
-
         $query = $this->db->pdo->query('SELECT * from product');
 
         return $query->fetchAll();
     }
 
     public function insert($request){
-        $request['image']='../img/' .$request['image'];
         $query = $this->db->pdo->prepare('INSERT INTO product (product_image, product_name, product_price, product_description)
         VALUES (:product_image, :product_name, :product_price, :product_description)');
 

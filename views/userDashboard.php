@@ -52,10 +52,10 @@ require_once '../controllers/user.php';
     <table class="content-table">
         <thead>
             <tr>
-              <th>emri</th>
-              <th>mbiemri</th>
-              <th>email</th>
-              <th>pasword</th>
+              <th>Emri</th>
+              <th>Mbiemri</th>
+              <th>Email</th>
+              <th>Password</th>
             </tr>
         </thead>
         <tbody>

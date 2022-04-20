@@ -7,7 +7,7 @@
         </div>
         <li><a href="index.php">Faqja Kryesore</a></li>
         <li><a href="produktet.php">Produktet</a></li>
-        <li><a href="loginForm.html">Kyçu</a></li>
+        <li><a href="loginForm.php">Kyçu</a></li>
         <li><a href="aboutUsPage.php">Rreth Nesh</a></li>
         <li><a href="contactUs.html">Na Kontaktoni</a></li>
       </ul>

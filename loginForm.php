@@ -181,12 +181,12 @@
     <div class="background"></div>
     <div class="container">
         <h2>Login Form</h2>
-        <form action="loginForm.php" method="post">
+        <form action="">
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="email" name="email" placeholder="username or email">
+                <input type="text" id="email" placeholder="username or email">
             </div>
 
             <div class="form-item">
@@ -196,18 +196,15 @@
                 <input type="password" id="password" placeholder="password">
             </div>
 
-            <button type="submit" name="btn" onclick="Validation()"> LOGIN </button>
+            <button type="submit" onclick="Validation()"> LOGIN </button>
             <p>Kyquni përmes</p>
             <div class="options">
                 <button class="fb">Facebook</button>
                 <button class="gl">Google</button>
             </div>
-            <p>Nuk keni llogari? <a href="registerForm.html">Regjistrohu</a></p>
+            <p>Nuk keni llogari? <a href="registerForm.php">Regjistrohu</a></p>
         </form>
     </div>
     <script src="js/validation.js"></script>
-    <?php
-        require_once 'loginValidate.php';
-    ?>
 </body>
 </html>
