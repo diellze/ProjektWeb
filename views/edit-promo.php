@@ -14,12 +14,9 @@ if(isset($_POST['submit'])){
 ?>
 
 <style>
-*{
-    font-family: verdana;
-}
-
 body{
-    background-color:#009879;
+    background-color:#93c1f5;
+	font-family: verdana;
 }
 
 h2{
@@ -44,6 +41,30 @@ label{
     width: 120px;
 }
 
+::-webkit-file-upload-button {
+  background: #93c1f5;
+  color: white;
+  padding: 0.8em;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input[type=text], input[type=password], input[type=description] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=description], input[type=password]:focus {
+  
+  outline: none;
+}
+
 .container form {
     background-color:white;
 	width: 500px;
@@ -55,7 +76,7 @@ label{
 button{
     text-align: center;
     font-size: 15px;
-    background-color: darkslategray;
+    background-color: #93c1f5;
     border-style: none;
     border-radius: 5px;
     color: white;
@@ -71,7 +92,7 @@ button{
 }
 
 button[type="submit"]:hover {
-    background: #181818;
+    background: steelblue;
 }
 
 @media only screen and (max-width: 996px) {

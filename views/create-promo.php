@@ -8,12 +8,9 @@ if(isset($_POST['submit'])){
 ?>
 
 <style>
-*{
-   
-}
-
 body{
     background-color:#93c1f5;
+    font-family: verdana;
 }
 
 h2{
@@ -52,7 +49,7 @@ input[type=text]:focus {
 input[type=text], input[type=password], input[type=description] {
   width: 100%;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 5px 0 10px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;
@@ -90,7 +87,7 @@ button{
 }
 
 button[type="submit"]:hover {
-    background: #93c1f5;
+    background: steelblue;
 }
 
 @media only screen and (max-width: 996px) {
@@ -113,7 +110,7 @@ button[type="submit"]:hover {
 		   <h2>CREATE A PROMOTION</h4><hr>
            <br>
 		   	<div class="form-group">
-			   <h3><label for="image">Image: </label></h3>
+			   <label for="image">Image: </label>
 		     <input type="file" 
 		           class="form-control" 
 		           id="image" 
@@ -121,7 +118,7 @@ button[type="submit"]:hover {
 		   </div><br>
 
 		   <div class="form-group">
-		   <h3> <label for="name">Title: </label></h3>
+		   <label for="name">Title: </label>
 		     <input type="text" 
 		           class="form-control" 
 		           id="title" 
@@ -129,7 +126,7 @@ button[type="submit"]:hover {
 		   </div><br>
 
            <div class="form-group">
-		   <h3>  <label for="price">Text: </label><h3>
+		   <label for="price">Text: </label>
 		     <input type="text" 
 		           class="form-control" 
 		           id="text" 

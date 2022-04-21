@@ -13,12 +13,9 @@ if(isset($_POST['submit'])){
 
 ?>
 <style>
-*{
-    font-family: verdana;
-}
-
 body{
-    background-color:#009879;
+    background-color:#93c1f5;
+    font-family: verdana;
 }
 
 h2{
@@ -31,6 +28,29 @@ h2{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+::-webkit-file-upload-button {
+  background: #93c1f5;
+  color: white;
+  padding: 0.8em;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input[type=text], input[type=password], input[type=description] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 0px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=description], input[type=password]:focus {
+    outline: none;
 }
 
 textarea{
@@ -54,7 +74,7 @@ label{
 button{
     text-align: center;
     font-size: 15px;
-    background-color: darkslategray;
+    background-color: #93c1f5;
     border-style: none;
     border-radius: 5px;
     color: white;
@@ -70,7 +90,21 @@ button{
 }
 
 button[type="submit"]:hover {
-    background: #181818;
+    background: steelblue;
+}
+
+@media only screen and (max-width: 996px) {
+	.container form {
+	    width: 400px;
+	    padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    .container form {
+	    width: 300px;
+	    padding: 15px;
+    }
 }
 
 </style>
@@ -99,19 +133,22 @@ button[type="submit"]:hover {
            <div class="form-group">
 		     <label for="price">Price: </label>
 		     <input type="text" 
-		           class="form-control" 
-		           id="price" 
-		           name="price" 
-                   value="<?php echo $currentProduct['product_price']; ?>">
+		            class="form-control" 
+		            id="price" 
+		            name="price" 
+                    value="<?php echo $currentProduct['product_price']; ?>">
 		   </div><br>
 
            <div class="form-group">
-		     <label for="description">Description: </label>
-		     <input name="description" 
-                    cols="30" 
-                    rows="10" 
-                    value="<?php echo $currentProduct['product_description']; ?>">
-		    </div><br>
+             <label for="description">Description: </label> 
+		     <textarea name="description" cols="30" rows="10" style  = "width: 100%;
+             padding: 15px;
+             margin: 5px 0 0px 0;
+             display: inline-block;
+             border: none;
+             background: #f1f1f1;"><?php echo $currentProduct['product_description']; ?></textarea>
+		   </div><br>
+
 
 		   <button type="submit" 
 		          class="btn"
@@ -121,12 +158,3 @@ button[type="submit"]:hover {
 	    </form>
 </div>
 
-
-
-
-<!--
-    Description:
-    <input type="text" name="description" value="<?php echo $currentProduct['product_description']; ?>">
-    <br>
-    <input type="submit" name="submit" value="Update">
-</form>

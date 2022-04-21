@@ -11,6 +11,7 @@ if(isset($_POST['submit'])){
 
 body{
     background-color:#93c1f5;
+    font-family: verdana;
 }
 
 h2{
@@ -38,15 +39,14 @@ input[type=text]:focus {
 input[type=text], input[type=password], input[type=description] {
   width: 100%;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 5px 0 0px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;
 }
 
 input[type=text]:focus, input[type=description], input[type=password]:focus {
-  
-  outline: none;
+    outline: none;
 }
 
 textarea{
@@ -61,10 +61,10 @@ label{
 
 .container form {
     background-color:white;
-	width: 500px;
-	padding: 20px;
-	border-radius: 15px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);  
+	  width: 500px;
+	  padding: 20px;
+	  border-radius: 15px;
+	  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);  
 }
 
 button{
@@ -86,7 +86,7 @@ button{
 }
 
 button[type="submit"]:hover {
-    background: #93c1f5;
+    background: steelblue;
 }
 
 
@@ -107,46 +107,46 @@ button[type="submit"]:hover {
 </style>
 <div class="container">
 		<form method="POST">
-		   <h2>CREATE A PRODUCT</h4><hr>
-           <br>
+		    <h2>CREATE A PRODUCT</h4><hr>
+        <br>
 		   	<div class="form-group">
-		    <h3> <label for="image">Image: </label> </h3>
-		     <input type="file" 
+		    <label for="image">Image: </label> 
+		    <input type="file" 
 		           class="form-control" 
 		           id="image" 
 		           name="image">
-		   </div><br>
+		    </div><br>
 
-		   <div class="form-group">
-		   <h3> <label for="name">Name: </label></h3>
-		     <input type="text" 
+		    <div class="form-group">
+		    <label for="name">Name: </label>
+		    <input type="text" 
 		           class="form-control" 
 		           id="name" 
 		           name="name" >
-		   </div><br>
+		    </div><br>
 
-           <div class="form-group">
-		   <h3> <label for="price">Price: </label> </h3>
-		     <input type="text" 
+        <div class="form-group">
+		    <label for="price">Price: </label> 
+		    <input type="text" 
 		           class="form-control" 
 		           id="price" 
 		           name="price" >
-		   </div><br>
+		    </div><br>
 
-           <div class="form-group">
-		   <h3> <label for="description">Description: </label> </h3>
-		     <textarea name="description" cols="30" rows="10" style  = "width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;"></textarea>
-		   </div><br>
+        <div class="form-group">
+		    <label for="description">Description: </label> 
+		    <textarea name="description" cols="30" rows="10" style  = "width: 100%;
+        padding: 15px;
+        margin: 5px 0 0px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;"></textarea>
+		    </div><br>
 
-		   <button type="submit" 
-		          class="btn"
-		          name="submit"
-                  value="Save">Create
-            </button>
-	    </form>
+		    <button type="submit" 
+		            class="btn"
+		            name="submit"
+                value="Save">Create
+        </button>
+	  </form>
 </div>

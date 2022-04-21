@@ -26,7 +26,7 @@
       <div class="col-1-of-4">
         <div>
           <div class="block-title">
-            <h2>Kategoritë</h2>
+            <h4 style="font-size: 20px">Kategoritë</h4>
           </div>
           <ul class="block-content">
             <li>
@@ -66,219 +66,42 @@
           <a href="">Filtro produktet</a>
         </form>
 
-        <div class="product-layout">
 
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product1.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
+        <!--PRODUKTET-->
+        <div class="product-layout">
+          <?php
+          $conn = mysqli_connect('localhost', 'root','','womenshoes');
+          $query = "SELECT * FROM product";
+          $run = mysqli_query($conn, $query);
+
+          if(mysqli_num_rows($run) > 0){
+            while($row = mysqli_fetch_array($run)){
+              $image = $row['product_image'];
+              $name = $row['product_name'];
+              $price = $row['product_price'];
+              $desc = $row['product_description'];
+
+              ?>
+              <div class="product">
+                <div class="img-container">
+                  <img src="img/<?php echo $image;?>" alt="" />
+                  <div class="addCart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </div>
+                </div>
+                <div class="bottom">
+                  <a href="productDetails.php"><?php echo $name;?></a>
+                  <div class="price">
+                    <span><?php echo $price;?></span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product2.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product3.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product4.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product5.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product6.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product7.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product8.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product9.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product10.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product11.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product12.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product13.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product14.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="img-container">
-              <img src="img/product15.png" alt="" />
-              <div class="addCart">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="bottom">
-              <a href="productDetails.php">Emri i Produktit</a>
-              <div class="price">
-                <span>100 €</span>
-              </div>
-            </div>
-          </div>
-        </div>
+              
+            <?php
+            }
+          }
+          ?>
+        
 
         <ul class="pagination">
           <span>1</span>
