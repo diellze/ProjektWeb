@@ -27,9 +27,9 @@
             $query->bindParam(':Konifrmoemailin', $request['emailk']);
             $query->bindParam(':Pasword', $request['password']);
             $query->bindParam(':KonfirmoPassword', $request['passwordk']);
-             $query->execute();
+            $query->execute();
     
-            return header('Location: userDashboard.php');
+            return header('Location: ../index.php');
         }
 
         public function edit($id){
@@ -43,7 +43,7 @@
         public function update($request, $id){
             $query = $this->db->pdo->prepare('UPDATE user SET Emri = :Emri,
             Mbiemri = :Mbiemri, Email = :Email, Konifrmoemailin = :Konifrmoemailin,
-             Pasword = :Pasword, KonfirmoPassword = :KonfirmoPassword WHERE id = :id');
+             Pasword = :Pasword, Konifrmoemailin = :Konifrmoemailin WHERE id = :id');
             $query->bindParam(':Emri', $request['emri']);
             $query->bindParam(':Mbiemri', $request['mbiemri']);
             $query->bindParam(':Email', $request['email']);
@@ -51,6 +51,7 @@
             $query->bindParam(':Pasword', $request['password']);
             $query->bindParam(':KonfirmoPassword', $request['passwordk']);
             $query->bindParam(':id', $id);
+            
             $query->execute();
     
             return header('Location: userDashboard.php');

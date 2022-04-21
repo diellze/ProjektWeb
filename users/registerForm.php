@@ -1,10 +1,10 @@
 <?php
-     /*   require_once 'user.php';
+      require_once 'user.php';
 
         $user = new user();
         if(isset($_POST['submit'])){
             $user->insert($_POST);
-        }*/
+        }
         
     ?> 
 
@@ -194,7 +194,7 @@
     <div class="background"></div>
     <div class="container">
         <h2>Regjistrim</h2>
-        <form action="" method="POST" name="form" >
+        <form action="registerForm.php" method="POST" name="form" >
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
@@ -237,6 +237,6 @@
             <button type="submit" name="submit" onclick="Validation2()"> REGJISTROHU</button>
         </form>
     </div>
-    <script src="js/validation.js"></script>
+    <script src="../js/validation.js"></script>
 </body>
 </html>
