@@ -75,19 +75,19 @@ a {
     <input type="text" placeholder="Shkruani emrin" name="emri" id="emri">
 
     <label for="mbiemri"><b>Mbiemri</b></label>
-    <input type="text" placeholder="Shkruani mbiemrin" name="mbiemri" id="mbiemri" required>
+    <input type="text" placeholder="Shkruani mbiemrin" name="mbiemri" id="mbiemri" >
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Shkruai Email-in" name="email" id="email" required>
+    <input type="text" placeholder="Shkruai Email-in" name="email" id="email" >
 
     <label for="email"><b>Konfirmo Emailin</b></label>
-    <input type="text" placeholder="Konfirmoni emailin" name="emailk" id="emailk" required>
+    <input type="text" placeholder="Konfirmoni emailin" name="emailk" id="emailk" >
 
     <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Shkruajeni Password-in" name="password" id="password" required>
+    <input type="password" placeholder="Shkruajeni Password-in" name="password" id="password" >
 
     <label for="psw-repeat"><b>Konfirmo Password</b></label>
-    <input type="password" placeholder="Shkruajeni Password-in edhe nje here" name="passwordk" id="psw-repeat" required>
+    <input type="password" placeholder="Shkruajeni Password-in edhe nje here" name="passwordk" id="psw-repeat" >
     <hr>
 
     <button type="submit" name="submit" class="registerbtn">Register</button>
