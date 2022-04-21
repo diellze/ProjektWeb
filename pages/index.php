@@ -43,37 +43,29 @@
     </div>
 
     <div class="promotion-layout container">
-      <div class="promotion-item">
-        <img src="../img/promo1.png" alt="" />
-        <div class="promotion-content">
-          <h3>KËPUCË ME TAKA</h3>
-          <a href="">BLEJ TANI</a>
-        </div>
-      </div>
+          <?php
+          $conn = mysqli_connect('localhost', 'root','','womenshoes');
+          $query = "SELECT * FROM promotion";
+          $run = mysqli_query($conn, $query);
 
-      <div class="promotion-item">
-        <img src="../img/promo2.png" alt="" />
-        <div class="promotion-content">
-          <h3>ATLETE</h3>
-          <a href="">BLEJ TANI</a>
-        </div>
-      </div>
-
-      <div class="promotion-item">
-        <img src="../img/promo3.png" alt="" />
-        <div class="promotion-content">
-          <h3>ÇIZME</h3>
-          <a href="">BLEJ TANI</a>
-        </div>
-      </div>
-
-      <div class="promotion-item">
-        <img src="../img/promo4.png" alt="" />
-        <div class="promotion-content">
-          <h3>SANDALE</h3>
-          <a href="">BLEJ TANI</a>
-        </div>
-      </div>
+          if(mysqli_num_rows($run) > 0){
+            while($row = mysqli_fetch_array($run)){
+              $image = $row['promo_image'];
+              $title = $row['promo_title'];
+              $text = $row['promo_text'];
+              ?>
+              <div class="promotion-item">
+                <img src="../img/<?php echo $image;?>" alt="" />
+                <div class="promotion-content">
+                  <h3><?php echo $title;?></h3>
+                  <a href=""><?php echo $text;?></a>
+                </div>
+              </div>
+              <?php
+            }
+          }
+          ?>
+    </div>
   </section>
 
 
