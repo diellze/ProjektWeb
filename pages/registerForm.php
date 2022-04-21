@@ -19,7 +19,7 @@
         }
         
         .background {
-            background: url('./img/background.jfif') rgba(0, 0, 0, 0.61);
+            background: url('../img/background.jfif') rgba(0, 0, 0, 0.61);
             background-repeat: no-repeat;
             background-size: cover;
             background-blend-mode: darken;
@@ -225,6 +225,6 @@
             <button type="submit" onclick="Validation2()"> REGJISTROHU</button>
         </form>
     </div>
-    <script src="js/validation.js"></script>
+    <script src="../js/validation.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@
         }
         
         .background {
-            background: url('./img/background.jfif') rgba(0, 0, 0, 0.61);
+            background: url('../img/background.jfif') rgba(0, 0, 0, 0.61);
             background-repeat: no-repeat;
             background-size: cover;
             background-blend-mode: darken;
@@ -205,6 +205,6 @@
             <p>Nuk keni llogari? <a href="registerForm.php">Regjistrohu</a></p>
         </form>
     </div>
-    <script src="js/validation.js"></script>
+    <script src="../js/validation.js"></script>
 </body>
 </html>

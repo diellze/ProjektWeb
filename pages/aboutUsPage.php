@@ -9,18 +9,18 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
         <script type="text/javascript" src="js/slider.js"></script>
-        <link rel="stylesheet" href="./css/slider.css" />
+        <link rel="stylesheet" href="../css/slider.css" />
 
         <!-- Custom StyleSheet -->
-        <link rel="stylesheet" href="./css/styles.css" />
+        <link rel="stylesheet" href="../css/styles.css" />
         <title>Ecommerce Website</title>
     </head>
 
     <body>
         <!-- Navigation -->
-        <?php include 'includeParts/header.php' ?>
+        <?php include '../includeParts/header.php' ?>
 
-        <div class="hero" style= "background-image:url(img/shoe.jpg);">
+        <div class="hero" style= "background-image:url(../img/shoe.jpg);">
             <div class = "left">
                 <h1 style ="align-items: center; text-shadow: 0 3px 6px rgb(0 0 0/ 50%);font-size: 4.2rem; "> Rreth Nesh</h1>
             </div>
@@ -58,7 +58,7 @@
               <div class="cont" id="slider-content">
   
                   <div class="active">
-                      <div class="img"><img src="img/client1.jpg"></div>
+                      <div class="img"><img src="../img/client1.jpg"></div>
                       <h2>ANNE HATHAWAY</h2>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
                          deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores. Lorem 
@@ -68,21 +68,21 @@
                   </div>
                   
                   <div>
-                      <div class="img"><img src="img/client2.jpg"></div>
+                      <div class="img"><img src="../img/client2.jpg"></div>
                       <h2>KATE UPTON</h2>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
                           deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.</p>
                   </div>
                   
                   <div>
-                      <div class="img"><img src="img/client3.jpg"></div>
+                      <div class="img"><img src="../img/client3.jpg"></div>
                       <h2>OLIVIA WILDE</h2>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
                           deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.</p>
                   </div>
                   
                   <div>
-                      <div class="img"><img src="img/client4.jpg"></div>
+                      <div class="img"><img src="../img/client4.jpg"></div>
                       <h2>ASHLEY GREENE</h2>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
                         deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores. Lorem 
@@ -95,9 +95,9 @@
       </section>
     
     <!-- Footer -->
-    <?php include 'includeParts/footer.php' ?>
+    <?php include '../includeParts/footer.php' ?>
     
-    <script src="./js/index.js"></script>
-    <script src="./js/slider.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/slider.js"></script>
     </body>
 </html>

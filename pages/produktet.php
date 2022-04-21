@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   
   <!-- Custom StyleSheet -->
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
   <title>Ecommerce Website</title>
 </head>
 
 <body>
 
   <!-- Navigation -->
-  <?php include 'includeParts/header.php' ?>
+  <?php include '../includeParts/header.php' ?>
 
   <!-- PRODUCTS -->
 
@@ -84,7 +84,7 @@
               ?>
               <div class="product">
                 <div class="img-container">
-                  <img src="img/<?php echo $image;?>" alt="" />
+                  <img src="../img/<?php echo $image;?>" alt="" />
                   <div class="addCart">
                     <i class="fas fa-shopping-cart"></i>
                   </div>
@@ -113,8 +113,8 @@
   </section>
 
   <!-- Footer -->
-  <?php include 'includeParts/footer.php' ?>
+  <?php include '../includeParts/footer.php' ?>
   
-  <script src="./js/index.js"></script>
+  <script src="../js/index.js"></script>
 </body>
 </html>

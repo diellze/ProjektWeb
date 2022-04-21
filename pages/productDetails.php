@@ -10,21 +10,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
   <!-- Custom StyleSheet -->
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
   <title>Ecommerce Website</title>
 </head>
 
 <body>
  
   <!-- Navigation -->
-  <?php include 'includeParts/header.php' ?>
+  <?php include '../includeParts/header.php' ?>
 
   <!-- Product Details -->
   <section class="section product-detail">
     <div class="details container">
       <div class="left">
         <div class="main">
-          <img src="img/product1.png" alt="" />
+          <img src="../img/product1.png" alt="" />
         </div>
       </div>
       <div class="right">
@@ -62,8 +62,8 @@
 
 
   <!-- Footer -->
-  <?php include 'includeParts/footer.php' ?>
+  <?php include '../includeParts/footer.php' ?>
   
-  <script src="./js/index.js"></script>
+  <script src="../js/index.js"></script>
 </body>
 </html>
