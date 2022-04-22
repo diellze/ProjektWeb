@@ -1,3 +1,14 @@
+<?php
+      require_once 'userRepository.php';
+
+        $user = new UserRepository();
+        if(isset($_POST['submit'])){
+            $user->insert($_POST);
+        }
+        
+    ?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +20,7 @@
     <!-- For google icons  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
-    <title>Login form</title>
+    <title>Regjistrimi</title>
     <style>
         body {
             padding: 0;
@@ -31,6 +42,7 @@
             z-index: -1;
             filter: blur(3px);
             min-height: 800px;
+
         }
 
         li{
@@ -109,7 +121,7 @@
             margin: 10px auto;
             padding: 10px 16px;
             color: white;
-            background: rgba(122, 123, 116, 0.72);
+            background: rgba(78, 78, 76, 0.72);
             border: none;
             text-align: center;
         }
@@ -173,36 +185,56 @@
     </style>
 </head>
 <body>
-    <ul>
+
+        <ul>
         <li><a href="index.php">Faqja Kryesore</a></li>
         <li><a href="aboutUsPage.php">Rreth Nesh</a></li>
-        <li><a href="contactUs.html">Na Kontaktoni</a></li>
+        <li><a href="contactUs.html"></a>Na Kontaktoni</li>
     </ul>
     <div class="background"></div>
     <div class="container">
-        <h2>Login Form</h2>
-        <form action="">
+        <h2>Regjistrim</h2>
+        <form action="registerForm.php" method="POST" name="form" >
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="email" placeholder="username or email">
+                <input type="text" id="emri" name="emri" placeholder="Emri">
+            </div>
+            <div class="form-item">
+                <span class="material-icons-outlined">
+                    account_circle
+                    </span>
+                <input type="text" id="mbiemri" name="mbiemri"placeholder="Mbiemri">
+            </div>
+
+            <div class="form-item">
+                <span class="material-icons-outlined">
+                    account_circle
+                    </span>
+                <input type="text" id="email" name="email" placeholder="Email">
+            </div>
+            <div class="form-item">
+                <span class="material-icons-outlined">
+                    account_circle
+                    </span>
+                <input type="text" id="email_k" name="emailk" placeholder="Konfirmo Email-in">
             </div>
 
             <div class="form-item">
                 <span class="material-icons-outlined">                   
                     lock
                     </span>
-                <input type="password" id="password" placeholder="password">
+                <input type="password" id="password" name="password" placeholder="Fjalëkalimi">
+            </div>
+            <div class="form-item">
+                <span class="material-icons-outlined">                   
+                    lock
+                    </span>
+                <input type="password" id="password_k" name="passwordk" placeholder="Konfirmo Fjalëkalimin">
             </div>
 
-            <button type="submit" name="loginbutton" onclick="Validation()"> LOGIN </button>
-            <p>Kyquni përmes</p>
-            <div class="options">
-                <button class="fb">Facebook</button>
-                <button class="gl">Google</button>
-            </div>
-            <p>Nuk keni llogari? <a href="registerForm.php">Regjistrohu</a></p>
+            <button type="submit" name="submit" onclick="Validation2()"> REGJISTROHU</button>
         </form>
     </div>
     <script src="../js/validation.js"></script>
