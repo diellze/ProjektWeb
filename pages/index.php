@@ -110,22 +110,30 @@
 
   <section class="section advert">
     <div id="collections" class="advert-layout container">
+    <?php
+        $conn = mysqli_connect('localhost', 'root','','womenshoes');
+        $query = "SELECT * FROM collections";
+        $run = mysqli_query($conn, $query);
+
+        if(mysqli_num_rows($run) > 0){
+          while($row = mysqli_fetch_array($run)){
+            $image = $row['collection_image'];
+            $title = $row['collection_title'];
+            $text1 = $row['collection_text1'];
+            $text2 = $row['collection_text2'];
+    ?>
       <div class="item ">
-        <img src="../img/promo7.png" alt="">
+        <img src="../img/<?php echo $image;?>" alt="">
         <div class="content left">
-          <span>Çmime eksluzive</span>
-          <h3>Koleksioni Dimëror</h3>
-          <span>Shiko Koleksionin</span>
+          <span><?php echo $title;?></span>
+          <h3><?php echo $text1;?></h3>
+          <span><?php echo $text2;?></span>
         </div>
       </div>
-      <div class="item">
-        <img src="../img/promo8.png" alt="">
-        <div class="content  right">
-          <span>Trendet e Reja</span>
-          <h3>Brendet e Atleteve</h3>
-          <span>Blej tani </span>
-        </div>
-      </div>
+      <?php
+          }
+        }
+      ?>
     </div>
   </section>
 
