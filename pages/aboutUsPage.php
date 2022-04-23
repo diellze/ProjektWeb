@@ -14,6 +14,28 @@
         <!-- Custom StyleSheet -->
         <link rel="stylesheet" href="../css/styles.css" />
         <title>Ecommerce Website</title>
+        <style>
+            .btn{
+                display: flex; 
+                justify-content: center;
+            }
+
+            button{
+                width: 150px;
+                height: 40px;
+                background-color:skyblue;
+                border-style:none;
+                font-size: 15px;
+                margin-top: 100px;
+                color: white;
+                cursor: pointer;
+                transition: all 0.7s ease;
+                text-align: center;
+                border-style: none;
+                border-radius: 5px;
+                margin-bottom: 15px;
+            }
+        </style>
     </head>
 
     <body>
@@ -30,6 +52,7 @@
         <section class="section promotion">
             <div class="title">
               <h2>Rreth <span class = "whoweare" style = "color:#93c1f5;">Nesh </span> </h2>
+              <br>
               <p class="aboutUs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eos odio labore officiis dignissimos ducimus repellendus vero magni, ipsam, libero asperiores minima. Incidunt asperiores alias placeat vero maxime. Voluptatem, vero. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem accusantium necessitatibus obcaecati saepe earum sunt ut, ab vitae voluptas eaque expedita voluptatibus, optio, eligendi vero cupiditate quaerat ipsa sint sit?
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem ipsam debitis numquam totam maiores tempore nostrum, nihil veniam sit rerum cum vitae et eum quae, in doloremque possimus ab eos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum assumenda molestias ab nam nobis non quis doloribus cumque, rerum minima asperiores quae deserunt harum dolor reprehenderit odio, iste amet id? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id debitis culpa, assumenda itaque, vel nemo cupiditate fugit repellat, quidem nesciunt laudantium sequi ab error quos soluta vero asperiores illo beatae!
               </p> 
@@ -37,6 +60,13 @@
         </section>
   
         <!-- Slider -->
+        <?php
+        require_once '../controllers/ReviewController.php';
+        $review = new ReviewController;
+        $all = $review->readData();
+        if(count($all)>=4){
+        ?>
+        
         <section class="slider" id="slider">
           <section class="section promotion">
             <div class="title">
@@ -57,42 +87,27 @@
   
               <div class="cont" id="slider-content">
   
-                  <div class="active">
-                      <div class="img"><img src="../img/client1.jpg"></div>
-                      <h2>ANNE HATHAWAY</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
-                         deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores. Lorem 
-                         ipsum dolor sit amet consectetur adipisicing elit. Harum adipisci voluptates hic quod vitae nulla 
-                         dolorum enim, aperiam vero, voluptas consequatur exercitationem asperiores velit blanditiis suscipit 
-                         atque voluptate quidem. </p>
-                  </div>
-                  
-                  <div>
-                      <div class="img"><img src="../img/client2.jpg"></div>
-                      <h2>KATE UPTON</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
-                          deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.</p>
-                  </div>
-                  
-                  <div>
-                      <div class="img"><img src="../img/client3.jpg"></div>
-                      <h2>OLIVIA WILDE</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
-                          deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores.</p>
-                  </div>
-                  
-                  <div>
-                      <div class="img"><img src="../img/client4.jpg"></div>
-                      <h2>ASHLEY GREENE</h2>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quasi aliquid vel voluptatum
-                        deleniti! Corrupti velit, porro facere facilis laboriosam accusantium, eos beatae maiores. Lorem 
-                        ipsum dolor sit amet consectetur adipisicing elit. Harum adipisci voluptates hic quod vitae nulla 
-                        dolorum enim, aperiam vero, voluptas consequatur exercitationem asperiores velit blanditiis suscipit 
-                        atque voluptate quidem. </p>
-                  </div>
+              <?php
+                  for($i = count($all)-1; $i >= count($all)-4 ; $i--) {
+              ?>
+              <div class="active">
+                  <div class="img"><img src="../img/<?php echo $all[$i] ['client_image'];?>"></div>
+                      <h2><?php echo $all[$i] ['client_name'];?></h2>
+                      <p><?php echo $all[$i] ['client_review'];?></p>
+              </div>
+              <?php
+            }
+        }
+        ?>    
+        
               </div>
           </div>
+          <div class="btn">
+              <button onclick="window.location.href='../views/create-review.php'">Your own review</button>
+          </div>
       </section>
+
+      
     
     <!-- Footer -->
     <?php include '../includeParts/footer.php' ?>
