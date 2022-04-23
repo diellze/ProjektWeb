@@ -62,11 +62,8 @@ class UserRepository extends Database
         $query->bindParam(':KonfirmoPassword', $request['passwordk']);
         $query->execute();
 
-        return header('Location: ../index.php');
+        return header('Location: ../pages/index.php');
     }
-
-    
-    
 
     public function delete($id){
         $query = $this->db->pdo->prepare('DELETE from user WHERE id=:id');

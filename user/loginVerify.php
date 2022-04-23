@@ -1,6 +1,6 @@
 <?php
 include_once 'adminuser.php';
-include_once 'simpleuser.php';
+//include_once 'simpleuser.php';
 require_once 'userRepository.php';
 session_start();
 //main
@@ -53,7 +53,7 @@ class LoginLogic
         $user = $mapper->getUserByUsername($username);
         if ($user == null || count($user) == 0) return false;
         else if (password_verify($password, $user['Pasword'])) {
-            $username,  $lastname,  $role, $email, $emailk,$password,$passwordk
+            //$username,  $lastname,  $role, $email, $emailk, $password, $passwordk
             if ($user['role'] == 1) {
                 $obj = new Admin($user['id'], $user['username'], $user['lastname'], $user['role']);
                 $obj->setSession();
@@ -91,6 +91,6 @@ class RegisterLogic
 
         $mapper = new UserRepository();
         $mapper->insertUser($user);
-        header("Location:../views/index.php");
+        header("Location:../pages/index.php");
     }
 }
