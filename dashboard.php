@@ -41,6 +41,12 @@
           </a>
         </li>
         <li>
+          <a href="./views/contactDashboard.php">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Collection Dashboard</span>
+          </a>
+        </li>
+        <li>
           <a href="#">
             <i class='bx bx-cog' ></i>
             <span class="links_name">Settings</span>

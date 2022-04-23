@@ -11,14 +11,16 @@ require_once '../controllers/ContactController.php';
   border-collapse: collapse;
   margin: 40px 0;
   font-size: 0.9em;
-  width: 100%;
+  width: 90%;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .content-table thead tr {
-  background-color: #009879;
+  background-color: #93c1f5;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
@@ -34,6 +36,7 @@ require_once '../controllers/ContactController.php';
     color: red;
     font-size: 17px;
 }
+
 .first-link{
   color: black;
   font-size: 22px;
@@ -48,55 +51,28 @@ require_once '../controllers/ContactController.php';
     text-decoration: none;
 }
 
-.edit{
-  text-align: center;
-  font-size: 15px; 
-  background-color: #00703c;
-  border-style: none;
-  border-radius: 5px;
-  color: white;
-  width: 50%;
-  height: 30px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  position:relative;
-  left:20%;
-}
-
-.delete{
-  text-align: center;
-  font-size: 15px; 
-  background-color: #ed2939;
-  border-style: none;
-  border-radius: 5px;
-  color: white;
-  width: 50%;
-  height: 30px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  position:relative;
-  left:20%;
-}
 </style>
 <div>
     <table class="content-table">
         <thead>
             <tr>
-              <th>User name</th>
-              <th>User email</th>
-              <th>User message</th>
+              <th>Emri</th>
+              <th>Email</th>
+              <th>Mesazhi</th>
+
             </tr>
         </thead>
         <tbody>
           <?php
-          $c = new ContactController;
-          $allContact = $c->readData();
-          foreach($allContact as $contact): ?>
+          $p = new ContactController;
+          $allcontacts = $p->readData();
+          foreach($allcontacts as $user): ?>
           <tr>
-            <td><?php echo $contact['emri_u']; ?></td>
-            <td><?php echo $contact['email_u']; ?></td>
-            <td><?php echo $contact['message_u']; ?></td>
-            <td><a href="delete-contact.php?id=<?php echo $contact['Id'];?>">Delete</a></td>
+            <td><?php echo $user['emri_u']; ?></td>
+            <td><?php echo $user['email_u']; ?></td>
+            <td><?php echo $user['message_u']; ?></td>
+            <td><a href="delete-user.php?id=<?php echo $user['Id'];?>">Delete</a></td>
+           
           </tr>
           <?php endforeach; ?>
         </tbody>

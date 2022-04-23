@@ -181,19 +181,19 @@
     <div class="background"></div>
     <div class="container">
         <h2>Login Form</h2>
-        <form action="">
+        <form action="loginForm.php" method="POST">
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="email" placeholder="username or email">
+                <input type="text" id="email" name="email" placeholder="email">
             </div>
 
             <div class="form-item">
                 <span class="material-icons-outlined">                   
                     lock
                     </span>
-                <input type="password" id="password" placeholder="password">
+                <input type="password" id="password" name="password"placeholder="password">
             </div>
 
             <button type="submit" name="loginbutton" onclick="Validation()"> LOGIN </button>
@@ -203,6 +203,7 @@
                 <button class="gl">Google</button>
             </div>
             <p>Nuk keni llogari? <a href="../user/registerForm.php">Regjistrohu</a></p>
+            <?php include_once 'loginVerify.php'?>
         </form>
     </div>
     <script src="../js/validation.js"></script>

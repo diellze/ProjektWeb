@@ -1,96 +1,53 @@
 <?php
 include_once 'adminuser.php';
-//include_once 'simpleuser.php';
+include_once 'simpleuser.php';
 require_once 'userRepository.php';
-session_start();
 //main
-if (isset($_POST['loginbutton'])) {
-    $login = new LoginLogic($_POST);
-    $login->verifyData();
-} else if (isset($_POST['submit'])) {
-    $register = new RegisterLogic($_POST);
-    $register->insertData();
-} else {
-    header("Location:../views/index.php");
-}
 
-class LoginLogic
-{
-    private $username = "";
-    private $password = "";
 
-    public function __construct($formData)
-    {
-        $this->username = $formData['Emri'];
-        $this->password = $formData['password'];
-    }
+$emriRegex = '^[a-zA-Z0-9]{3,}$';
+$emailRegex = '^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}$';
+$passwordRegex ='^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$'; 
 
-    public function verifyData()
-    {
-        if ($this->variablesNotDefinedWell($this->username, $this->password)) {
-            echo '1';
-            header("Location:../views/index.php");
-        } else if ($this->usernameAndPasswordCorrect($this->username, $this->password)) {
-            echo '2';
-            header('Location:../views/home.php');
-        } else {
-            echo '3';
-            header("Location:../views/index.php");
+    if(isset($_POST['submit'])){
+        if(empty($_POST['emri']) || empty($_POST['mbiemri']) || empty($_POST['email']) || empty($_POST['emailk']) || empty($_POST['password']) || empty($_POST['passwordk'])){
+            echo"";
         }
-    }
-
-    private function variablesNotDefinedWell($username, $password)
-    {
-        if (empty($username) || empty($password)) {
-            return true;
-        }
-        return false;
-    }
-
-    private function usernameAndPasswordCorrect($username, $password)
-    {
-        $repository = new userRepository();
-        $user = $mapper->getUserByUsername($username);
-        if ($user == null || count($user) == 0) return false;
-        else if (password_verify($password, $user['Pasword'])) {
-            //$username,  $lastname,  $role, $email, $emailk, $password, $passwordk
-            if ($user['role'] == 1) {
-                $obj = new Admin($user['id'], $user['username'], $user['lastname'], $user['role']);
-                $obj->setSession();
-            } else {
-                $obj = new SimpleUser($user['id'], $user['username'], $user['password'], $user['role'], "");
-                $obj->setSession();
+           if(!(preg_match($emriRegex, $_POST['emri'])) && !(preg_match($emriRegex, $_POST['mbiemri'])) && !(preg_match($emailRegex, $_POST['email'])) && !(preg_match($emailRegex, $_POST['emailk'])) && !(preg_match($passwordRegex, $_POST['password'])) && !(preg_match($passwordRegex, $_POST['passwordk']))){
+               echo"";
             }
-            return true;
-        } else return false;
-    }
-}
+        
+        else{
+            $emri = $_POST['emri'];
+            $mbiemri = $_POST['mbiemri'];
+            $email = $_POST['email'];
+            $emailk = $_POST['emailk'];
+            $password = $_POST['password'];
+            $passwordk = $_POST['passwordk'];
+            $id = $email.rand(100,999);
 
-class RegisterLogic
-{
-    private $username = "";
-    private $lastname = "";
-    private $email = "";
-    private $emailk = "";
-    private $password = "";
-    private $passwordk = "";
+            $user = new UserRepository();
+            $user->insert($_POST);
+            
 
-    public function __construct($formData)
-    {
-        $this->username = $formData['emri'];
-        $this->lastname = $formData['mbiemri'];
-        $this->email = $formData['email'];
-        $this->emailk = $formData['emailk'];
-        $this->password = $formData['password'];
-        $this->passwordk = $formData['passwordk'];
+        }
+    
     }
 
-    public function insertData()
-    {
-        $user = new SimpleUser($this->username, $this->password, 25, 0, $this->userLastName);
+    if(isset($_POST['loginbutton'])){
+        if(empty($_POST['email']) || empty($_POST['password'])){
+            echo"";
+        }
+         elseif(!(preg_match($emriRegex, $_POST['email'])) && !(preg_match($passwordRegex, $_POST['password']))){
+               echo"";
+            }
+        
+        else{
+            $email = $_POST['email'];
+            $password = $_POST['password'];
 
-        $mapper = new UserRepository();
-        $mapper->insertUser($user);
-        header("Location:../pages/index.php");
+        }
+    
     }
-}
+
+?>
