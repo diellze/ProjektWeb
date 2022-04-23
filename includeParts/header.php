@@ -9,7 +9,7 @@
         <li><a href="produktet.php">Produktet</a></li>
         <li><a href="loginForm.php">Kyçu</a></li>
         <li><a href="aboutUsPage.php">Rreth Nesh</a></li>
-        <li><a href="contactUs.html">Na Kontaktoni</a></li>
+        <li><a href="contactUs.php">Na Kontaktoni</a></li>
       </ul>
       <label for="" class="btn open-btn"><i class="fas fa-bars"></i></label>
     </div>

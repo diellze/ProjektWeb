@@ -1,3 +1,12 @@
+<?php
+      require_once '../controllers/ContactController.php';
+
+        $contact = new ContactController;
+        if(isset($_POST['submit'])){
+            $contact->insert($_POST);
+        }
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +27,10 @@
             <div class="form-area">
                 <h2>Na kontaktoni</h2>
                 <form action="">
-                    <input type="text" placeholder="Emri">
-                    <input type="email" placeholder="Emaili">
-                    <textarea cols="30" rows="3" placeholder="Mesazhi"></textarea>
-                    <button  type="submit">Dergo</button>
+                    <input type="text" name="emri" id="emri" placeholder="Emri">
+                    <input type="email" name="email" id="email" placeholder="Emaili">
+                    <textarea cols="30" name="message" id="message" rows="3" placeholder="Mesazhi"></textarea>
+                    <button  type="submit" name="submit" value="Save">Dergo</button>
                 </form>
                 <div class="social-icons">
                     <i class="facebook fab fa-facebook-f"></i>
