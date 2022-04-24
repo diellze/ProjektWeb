@@ -22,14 +22,22 @@
   <!-- Product Details -->
   <section class="section product-detail">
     <div class="details container">
+
+    <?php
+          require_once '../controllers/ProductController.php';
+          $products = new ProductController;
+          $all = $products->readData();
+          for($i = count($all)-1; $i >= count($all)-8 ; $i--) {
+
+              ?>
       <div class="left">
         <div class="main">
-          <img src="../img/product1.png" alt="" />
+          <img src="../img/<?php echo $all[$i] ['product_image'];?>" alt="" />
         </div>
       </div>
       <div class="right">
-        <h1>Emri i Produktit</h1>
-        <div class="price">100 €</div>
+        <h1><?php echo $all[$i] ['product_name'];?></h1>
+        <div class="price"><?php echo $all[$i] ['product_price'];?></div>
         <form>
           <div>
             <select>
@@ -53,10 +61,9 @@
         </form>
         <h3>Detajet e Produktit</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero minima
-          delectus nulla voluptates nesciunt quidem laudantium, quisquam
-          voluptas facilis dicta in explicabo, laboriosam ipsam suscipit!
+         <?php echo $all[$i] ['product_description'];?>
         </p>
+        <?php } ?>
       </div>
   </section>
 

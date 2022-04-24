@@ -23,7 +23,6 @@
        if(!empty($email) || !empty($password)){
             $query = "Select * from user where email = '$email' && pasword = '$password'";
             $result = mysqli_query($con, $query);
-            $emailcount = mysqli_num_rows($result);
             
             if($result->num_rows > 0){
                 $row = $result->fetch_assoc();

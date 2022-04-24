@@ -3,7 +3,7 @@
       <div class="footer-container">
         <div class="footer-center">
           <h3>INFORMACIONE</h3>
-          <a href="#">Rreth Nesh</a>
+          <a href="../pages/aboutUsPage.php">Rreth Nesh</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms & Conditions</a>
           <a href="#">Harta e Faqes</a>
