@@ -7,6 +7,7 @@
           <a href="#">Privacy Policy</a>
           <a href="#">Terms & Conditions</a>
           <a href="#">Harta e Faqes</a>
+          <a href="../pages/logout.php">Log out</a>
         </div>
         <div class="footer-center">
           <h3>LLOGARIA IME</h3>
