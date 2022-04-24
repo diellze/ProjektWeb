@@ -1,11 +1,15 @@
-<?php
-      require_once '../controllers/ContactController.php';
+ 
 
-        $contact = new ContactController;
-        if(isset($_POST['submit'])){
-            $contact->insert($_POST);
-        }
-?> 
+<?php
+require_once '../controllers/ContactController.php';
+
+$contact = new ContactController;
+if(isset($_POST['submit'])){
+    $contact->insert($_POST);
+}
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">

@@ -1,3 +1,50 @@
+<?php
+    session_start();
+    if(isset($_SESSION['ID'])){
+        header("Location: dashboard.php");
+        exit();
+    }
+
+    include_once('../config/database.php');
+
+    if(isset($_POST['loginbutton'])){
+        $errorMsg = "";
+        $con = mysqli_connect("localhost","root","","womenshoes");
+        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $password = mysqli_real_escape_string($con, $_POST['password']);
+
+        $emailRegex = "/^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/";
+        $passwordRegex = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/"; 
+
+        $k1 = !preg_match($emailRegex, $email);
+        $k2 = !preg_match($passwordRegex, $password);
+        
+
+       if(!empty($email) || !empty($password)){
+            $query = "Select * from user where email = '$email' && pasword = '$password'";
+            $result = mysqli_query($con, $query);
+            $emailcount = mysqli_num_rows($result);
+            
+            if($result->num_rows > 0){
+                $row = $result->fetch_assoc();
+                $_SESSION['Id'] = $row['id'];
+                $_SESSION['Email'] = $row['email'];
+                $_SESSION['Pasword'] = $row['password'];
+                if($k1 || $k2){
+                    echo "";
+                } 
+                header("Location: ../pages/index.php");
+                die();
+            }else{
+                $errorMsg = "No user found on this username";
+            }
+        }else{
+            $errorMsg = "Username and pasword is reqired";
+        }
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -17,12 +17,12 @@ class ContactController{
     }
 
     public function insert($request){
-        $query = $this->db->pdo->prepare('INSERT INTO contact (Emri, Emaili, Mesazhi)
-        VALUES (:Emri, :Emaili, :Mesazhi)');
+        $query = $this->db->pdo->prepare('INSERT INTO contact (emri_u, email_u, message_u)
+        VALUES (:emri_u, :email_u, :message_u)');
 
-        $query->bindParam(':Emri', $request['emri']);
-        $query->bindParam(':Emaili', $request['email']);
-        $query->bindParam(':Mesazhi', $request['mesazhi']);
+        $query->bindParam(':emri_u', $request['emri']);
+        $query->bindParam(':email_u', $request['email']);
+        $query->bindParam(':message_u', $request['mesazhi']);
         $query->execute();
 
         return header('Location: contactDashboard.php');
