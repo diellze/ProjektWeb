@@ -4,7 +4,11 @@
       <ul class="nav-list">
         <div class="top">
           <label for="" class="btn close-btn"><i class="fas fa-times"></i></label>
-        </div>
+        </div> 
+        <?php
+        if(isset($_SESSION['Roli']) && $_SESSION['role'] == 1){ ?>
+        <li><a href="../dashboard.php">Dashboard</a></li>
+        <?php } ?>
         <li><a href="../pages/index.php">Faqja Kryesore</a></li>
         <li><a href="../pages/produktet.php">Produktet</a></li>
         <li><a href="../user/loginForm.php">Kyçu</a></li>

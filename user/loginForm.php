@@ -4,7 +4,7 @@
         header("Location: dashboard.php");
         exit();
     }
-
+    
     include_once('../config/database.php');
 
     if(isset($_POST['loginbutton'])){
@@ -248,8 +248,8 @@
                 <button class="fb">Facebook</button>
                 <button class="gl">Google</button>
             </div>
-            <p>Nuk keni llogari? <a href="../user/registerForm.php">Regjistrohu</a></p>
-            <?php include_once 'loginVerify.php'?>
+            <p>Nuk keni llogari? <a href="registerForm.php">Regjistrohu</a></p>
+            
         </form>
     </div>
     <script src="../js/validation.js"></script>
