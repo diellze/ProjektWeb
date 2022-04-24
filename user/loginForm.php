@@ -16,20 +16,21 @@
         $emailRegex = "/^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/";
         $passwordRegex = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/"; 
 
-        $k1 = !preg_match($emailRegex, $email);
-        $k2 = !preg_match($passwordRegex, $password);
+        $k1 = preg_match($emailRegex, $email);
+        $k2 = preg_match($passwordRegex, $password);
         
 
        if(!empty($email) || !empty($password)){
             $query = "Select * from user where email = '$email' && pasword = '$password'";
             $result = mysqli_query($con, $query);
+            $emailcount = mysqli_num_rows($result);
             
             if($result->num_rows > 0){
                 $row = $result->fetch_assoc();
                 $_SESSION['Id'] = $row['id'];
                 $_SESSION['Email'] = $row['email'];
                 $_SESSION['Pasword'] = $row['password'];
-                if($k1 || $k2){
+                if($k1 && $k2){
                     echo "";
                 } 
                 header("Location: ../pages/index.php");
@@ -220,9 +221,9 @@
 </head>
 <body>
     <ul>
-        <li><a href="../pages/index.php">Faqja Kryesore</a></li>
-        <li><a href="../pages/aboutUsPage.php">Rreth Nesh</a></li>
-        <li><a href="../pages/contactUs.php">Na Kontaktoni</a></li>
+        <li><a href="index.php">Faqja Kryesore</a></li>
+        <li><a href="aboutUsPage.php">Rreth Nesh</a></li>
+        <li><a href="contactUs.php">Na Kontaktoni</a></li>
     </ul>
     <div class="background"></div>
     <div class="container">

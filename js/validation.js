@@ -19,9 +19,6 @@ function Validation(){
     else if(passwordRegex.test(password) == false){
         alert("Password duhet te kete 8 deri ne 15 karaktere dhe duhet te permbaje te pakten nje shkronje te madhe, nje shkronje te vogel, nje numer, dhe nje karakter special.");
     }
-    else{
-        alert("Logged in succesfully!");
-    }
 }
 
 var emriRegex = /^[A-Z][a-z]*/;
@@ -94,9 +91,6 @@ function Validation2(){
         }
         if(kushti) {
             alert(str);
-        }
-        else{
-            alert("Regjistrimi u krye me sukses!");
         }
     }
 }

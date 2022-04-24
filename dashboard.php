@@ -17,7 +17,7 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="./users/userDashboard.php" class="active">
+          <a href="./user/userDashboard.php" class="active">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name"> User Dashboard</span>
           </a>
@@ -43,7 +43,7 @@
         <li>
           <a href="./views/contactDashboard.php">
             <i class='bx bx-list-ul' ></i>
-            <span class="links_name">Collection Dashboard</span>
+            <span class="links_name">Message Dashboard</span>
           </a>
         </li>
         <li>

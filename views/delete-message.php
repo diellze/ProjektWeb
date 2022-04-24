@@ -5,7 +5,7 @@ if(isset($_GET['id'])){
     $contactId = $_GET['id'];
 }
 
-$contact = new Contact;
+$contact = new ContactController;
 $contact->delete($contactId);
 
 ?>

@@ -30,11 +30,11 @@ if(isset($_POST['submit'])){
             </div>
             <div class="form-area">
                 <h2>Na kontaktoni</h2>
-                <form action="">
+                <form action="" method="POST">
                     <input type="text" name="emri" id="emri" placeholder="Emri">
                     <input type="email" name="email" id="email" placeholder="Emaili">
-                    <textarea cols="30" name="message" id="message" rows="3" placeholder="Mesazhi"></textarea>
-                    <button  type="submit" name="submit" value="Save">Dergo</button>
+                    <textarea cols="30" name="mesazhi" id="mesazhi" rows="3" placeholder="Mesazhi"></textarea>
+                    <button  type="submit" name="submit">Dergo</button>
                 </form>
                 <div class="social-icons">
                     <i class="facebook fab fa-facebook-f"></i>
