@@ -221,9 +221,9 @@
 </head>
 <body>
     <ul>
-        <li><a href="index.php">Faqja Kryesore</a></li>
-        <li><a href="aboutUsPage.php">Rreth Nesh</a></li>
-        <li><a href="contactUs.php">Na Kontaktoni</a></li>
+        <li><a href="../pages/index.php">Faqja Kryesore</a></li>
+        <li><a href="../pages/aboutUsPage.php">Rreth Nesh</a></li>
+        <li><a href="../pages/contactUs.php">Na Kontaktoni</a></li>
     </ul>
     <div class="background"></div>
     <div class="container">
