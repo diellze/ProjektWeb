@@ -64,6 +64,26 @@
             }
         }
 
+        public function edit($id){
+            $query = $this->db->pdo->prepare('SELECT Roli from user WHERE id = :id');
+            $query->bindParam(':id', $id);
+            $query->execute();
+    
+            return $query->fetch();
+        }
+    
+        public function update($request, $id){
+            $query = $this->db->pdo->prepare('UPDATE user SET Roli = :Roli WHERE id = :id');
+            $query->bindParam(':Roli', $request['role']);
+            
+
+            $query->bindParam(':id', $id);
+            $query->execute();
+    
+            return header('Location: userDashboard.php');
+        }
+
+
         public function delete($id){
             $query = $this->db->pdo->prepare('DELETE from user WHERE id=:id');
             $query->bindParam(':id', $id);
