@@ -1,5 +1,5 @@
 <?php
-require_once '../users/user.php';
+require_once 'user.php';
 ?>
 
 <style>
@@ -9,18 +9,16 @@ require_once '../users/user.php';
 
 .content-table {
   border-collapse: collapse;
-  margin: 40px 0;
+  margin: 25px 0;
   font-size: 0.9em;
-  width: 90%;
+  width: 100%;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  margin-left: 5%;
-  margin-right: 5%;
 }
 
 .content-table thead tr {
-  background-color: #0072bb;
+  background-color: #009879;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
@@ -36,7 +34,6 @@ require_once '../users/user.php';
     color: red;
     font-size: 17px;
 }
-
 .first-link{
   color: black;
   font-size: 22px;
@@ -50,7 +47,6 @@ require_once '../users/user.php';
     padding: 30px;
     text-decoration: none;
 }
-
 </style>
 <div>
     <table class="content-table">
@@ -59,21 +55,21 @@ require_once '../users/user.php';
               <th>Emri</th>
               <th>Mbiemri</th>
               <th>Email</th>
-              <th>Password</th>
+              <th>Roli</th>
             </tr>
         </thead>
         <tbody>
           <?php
-          $p = new user;
-          $allusers = $p->readData();
-          foreach($allusers as $user): ?>
+          $u = new User;
+          $allusers = $u->readData();
+          foreach($allusers as $User): ?>
           <tr>
-            <td><?php echo $user['Emri']; ?></td>
-            <td><?php echo $user['Mbiemri']; ?></td>
-            <td><?php echo $user['Email']; ?></td>
-            <td><?php echo $user['Pasword']; ?></td>
-            <td><a href="delete-user.php?id=<?php echo $user['Id'];?>">Delete</a></td>
-           
+            <td><?php echo $User['Emri']; ?></td>
+            <td><?php echo $User['Mbiemri']; ?></td>
+            <td><?php echo $User['Email']; ?></td>
+            <td><?php echo $User['Roli']; ?></td>
+            <td><a href="edit-user.php?id=<?php echo $User['Id'];?>">Edit</a></td>
+            <td><a href="delete-user.php?id=<?php echo $User['Id'];?>">Delete</a></td>
           </tr>
           <?php endforeach; ?>
         </tbody>
