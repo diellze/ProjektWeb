@@ -25,17 +25,15 @@ class ContactController{
         $query->bindParam(':message_u', $request['mesazhi']);
         $query->execute();
 
-        return header('Location: contactDashboard.php');
+        return header('Location: contactUs.php');
     }
-
-    
 
     public function delete($id){
         $query = $this->db->pdo->prepare('DELETE from contact WHERE id=:id');
         $query->bindParam(':id', $id);
         $query->execute();
 
-        return header("Location: contactDashboard.php");
+        return header("Location: ../views/contactDashboard.php");
     }
 }
 ?>

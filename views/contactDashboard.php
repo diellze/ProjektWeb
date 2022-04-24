@@ -64,14 +64,14 @@ require_once '../controllers/ContactController.php';
         </thead>
         <tbody>
           <?php
-          $p = new ContactController;
-          $allcontacts = $p->readData();
-          foreach($allcontacts as $user): ?>
+          $c = new ContactController;
+          $allContacts = $c->readData();
+          foreach($allContacts as $contact): ?>
           <tr>
-            <td><?php echo $user['emri_u']; ?></td>
-            <td><?php echo $user['email_u']; ?></td>
-            <td><?php echo $user['message_u']; ?></td>
-            <td><a href="delete-user.php?id=<?php echo $user['Id'];?>">Delete</a></td>
+            <td><?php echo $contact['emri_u']; ?></td>
+            <td><?php echo $contact['email_u']; ?></td>
+            <td><?php echo $contact['message_u']; ?></td>
+            <td><a href="delete-message.php?id=<?php echo $contact['Id'];?>">Delete</a></td>
            
           </tr>
           <?php endforeach; ?>

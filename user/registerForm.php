@@ -1,5 +1,5 @@
 <?php
-      require_once '../user/user.php';
+      require_once 'user.php';
 
         $user = new User();
         if(isset($_POST['submit'])){
