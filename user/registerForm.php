@@ -1,13 +1,11 @@
 <?php
-      require_once 'userRepository.php';
+      require_once '../user/user.php';
 
-        $user = new UserRepository();
+        $user = new User();
         if(isset($_POST['submit'])){
             $user->insert($_POST);
         }
-        
-    ?> 
-
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -183,6 +181,20 @@
             }  
         }
     </style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- For google icons  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <title>Regjistrimi</title>
+    <link rel="stylesheet" href="../css/loginAndRegister.css" />
 </head>
 <body>
 
@@ -199,39 +211,39 @@
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="emri" name="emri" placeholder="Emri">
+                <input type="text" id="emri" name="emri" placeholder="Emri" required>
             </div>
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="mbiemri" name="mbiemri"placeholder="Mbiemri">
+                <input type="text" id="mbiemri" name="mbiemri" placeholder="Mbiemri" required>
             </div>
 
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="email" name="email" placeholder="Email">
+                <input type="text" id="email" name="email" placeholder="Email" required>
             </div>
             <div class="form-item">
                 <span class="material-icons-outlined">
                     account_circle
                     </span>
-                <input type="text" id="email_k" name="emailk" placeholder="Konfirmo Email-in">
+                <input type="text" id="email_k" name="emailk" placeholder="Konfirmo Email-in" required>
             </div>
 
             <div class="form-item">
                 <span class="material-icons-outlined">                   
                     lock
                     </span>
-                <input type="password" id="password" name="password" placeholder="Fjalëkalimi">
+                <input type="password" id="password" name="password" placeholder="Fjalëkalimi" required>
             </div>
             <div class="form-item">
                 <span class="material-icons-outlined">                   
                     lock
                     </span>
-                <input type="password" id="password_k" name="passwordk" placeholder="Konfirmo Fjalëkalimin">
+                <input type="password" id="password_k" name="passwordk" placeholder="Konfirmo Fjalëkalimin" required>
             </div>
 
             <button type="submit" name="submit" onclick="Validation2()"> REGJISTROHU</button>
