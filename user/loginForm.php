@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $errorMsg = "";
     if(isset($_SESSION['ID'])){
         header("Location: dashboard.php");
         exit();
@@ -8,7 +9,6 @@
     include_once('../config/database.php');
 
     if(isset($_POST['loginbutton'])){
-        $errorMsg = "";
         $con = mysqli_connect("localhost","root","","womenshoes");
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -21,7 +21,7 @@
         
 
        if(!empty($email) || !empty($password)){
-            $query = "Select * from user where email = '$email' && pasword = '$password'";
+            $query = "Select * from user where Email = '$email' && Pasword = '$password'";
             $result = mysqli_query($con, $query);
             $emailcount = mysqli_num_rows($result);
             
@@ -31,17 +31,18 @@
                 $_SESSION['Email'] = $row['email'];
                 $_SESSION['Pasword'] = $row['password'];
                 if($k1 && $k2){
-                    echo "";
+                    $errorMsg = "Login successful";
                 } 
                 header("Location: ../pages/index.php");
                 die();
             }else{
-                $errorMsg = "No user found on this username";
+                $errorMsg = "Username or password incorrect";
             }
-        }else{
-            $errorMsg = "Username and pasword is reqired";
         }
     }
+    
+
+
 ?>
 
 
@@ -176,6 +177,11 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+
+        .error{
+            color: red;
+            font-size: 10px;
+        }
         
         button {
             padding: 5px 16px;
@@ -228,6 +234,7 @@
     <div class="background"></div>
     <div class="container">
         <h2>Login Form</h2>
+        <p class="error"><?php echo $errorMsg; ?></p>
         <form action="loginForm.php" method="POST">
             <div class="form-item">
                 <span class="material-icons-outlined">
